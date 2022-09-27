@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         "/register": (context) => Register(),
         "/forgot": (context) => Forgot(),
         "/email": (context) => Email(),
-        "/home": (context) => Home()
+        // "/home": (context) => Home()
       },
     );
   }

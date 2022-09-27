@@ -10,6 +10,10 @@ class Email extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.textColor,
+      appBar: AppBar(
+        backgroundColor: GlobalColors.textColor,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(30),
@@ -29,21 +33,21 @@ class Email extends StatelessWidget {
                     height: 25,
                   ),
                   Text(
-                    "CHECK",
-                    style: TextStyle(
-                        fontSize: 50,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white),
-                  ),
-                  Text(
-                    "EMAIL",
+                    "CHECK EMAIL",
                     style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.w900,
                         color: Colors.white),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 25,
+                  ),
+                  Text(
+                    "please check your email",
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white),
                   ),
                   Container(
                     height: 60,
@@ -53,12 +57,12 @@ class Email extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
                   SizedBox(
                     height: 5,
                   ),
-                  Back(),
+                  // Back(),
                   Divider(
                     height: 30,
                     color: Colors.black,

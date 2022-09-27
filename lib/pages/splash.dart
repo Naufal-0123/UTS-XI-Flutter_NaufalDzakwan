@@ -19,7 +19,7 @@ class _Splash extends State<Splash> {
   startSplash() async {
     var duration = const Duration(seconds: 3);
     return Timer(duration, () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/login');
     });
   }
 

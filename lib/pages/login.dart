@@ -7,7 +7,14 @@ import 'package:login_register/pages/widget/button.dart';
 import 'package:login_register/pages/widget/social.dart';
 import 'package:login_register/pages/widget/loginB.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  bool eye = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +40,15 @@ class Login extends StatelessWidget {
                     height: 25,
                   ),
                   TextFormField(
+                    style: TextStyle(color: Colors.teal),
+                    cursorColor: Colors.teal,
                     keyboardType: TextInputType.emailAddress,
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter email",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.email,
@@ -47,20 +59,31 @@ class Login extends StatelessWidget {
                     height: 25,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
+                      style: TextStyle(color: Colors.teal),
+                      cursorColor: Colors.teal,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: eye,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter password",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.teal,
                         ),
-                        suffixIcon: Icon(
-                          Icons.visibility,
-                          color: Colors.teal,
-                        )),
-                  ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              eye = !eye;
+                            });
+                          },
+                          icon: Icon(
+                              eye ? Icons.visibility_off : Icons.visibility,
+                              color: Colors.teal),
+                        ),
+                      )),
                   SizedBox(
                     height: 5,
                   ),
@@ -110,10 +133,7 @@ class Login extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Divider(
-                    height: 30,
-                    color: Colors.black,
-                  ),
+                  Divider(height: 30, color: Colors.teal),
                   SizedBox(
                     height: 5,
                   ),
@@ -123,7 +143,7 @@ class Login extends StatelessWidget {
                       Text(
                         "Dont have an account?",
                         style: TextStyle(
-                          color: Colors.black.withOpacity(0.7),
+                          color: Colors.teal,
                         ),
                       ),
                       TextButton(

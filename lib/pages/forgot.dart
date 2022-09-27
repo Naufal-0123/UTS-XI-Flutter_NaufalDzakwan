@@ -10,6 +10,10 @@ class Forgot extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.textColor,
+      appBar: AppBar(
+        backgroundColor: GlobalColors.textColor,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(30),
@@ -17,6 +21,18 @@ class Forgot extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  // Stack(
+                  //   children: [
+                  //     Positioned(
+                  //       left: 30.0,
+                  //       top: 30.0,
+                  //       child: Text(
+                  //         '<',
+                  //         style: TextStyle(color: Colors.teal),
+                  //       ),
+                  //     )
+                  //   ],
+                  // ),
                   SizedBox(
                     height: 25,
                   ),
@@ -46,10 +62,15 @@ class Forgot extends StatelessWidget {
                     height: 25,
                   ),
                   TextFormField(
+                    style: TextStyle(color: Colors.teal),
+                    cursorColor: Colors.teal,
                     keyboardType: TextInputType.emailAddress,
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter email",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.email,
@@ -65,22 +86,22 @@ class Forgot extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: MaterialButton(
-                      onPressed: () {},
-                      child: Text(
-                        "FORGOT PASSWORD",
-                        style: TextStyle(fontSize: 30, color: Colors.white),
-                      ),
-                    ),
+                    // child: MaterialButton(
+                    //   onPressed: () {},
+                    //   child: Text(
+                    //     "FORGOT PASSWORD",
+                    //     style: TextStyle(fontSize: 30, color: Colors.white),
+                    //   ),
+                    // ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 25,
                   ),
                   Button(),
                   SizedBox(
                     height: 5,
                   ),
-                  Back(),
+                  // Back(),
                   Divider(
                     height: 30,
                     color: Colors.black,

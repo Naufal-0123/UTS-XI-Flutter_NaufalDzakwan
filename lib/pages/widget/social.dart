@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:login_register/utils/global.dart';
@@ -14,8 +14,7 @@ class Social extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             '-Or Sign In With-',
-            style: TextStyle(
-                color: GlobalColors.textColor, fontWeight: FontWeight.w600),
+            style: TextStyle(color: Colors.teal, fontWeight: FontWeight.w600),
           ),
         ),
         SizedBox(

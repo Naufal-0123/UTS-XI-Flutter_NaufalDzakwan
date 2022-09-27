@@ -11,6 +11,8 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  bool eye = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +38,15 @@ class _RegisterState extends State<Register> {
                     height: 25,
                   ),
                   TextFormField(
+                    style: TextStyle(color: Colors.teal),
+                    cursorColor: Colors.teal,
                     keyboardType: TextInputType.emailAddress,
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter Username",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.person,
@@ -50,10 +57,15 @@ class _RegisterState extends State<Register> {
                     height: 25,
                   ),
                   TextFormField(
+                    style: TextStyle(color: Colors.teal),
+                    cursorColor: Colors.teal,
                     keyboardType: TextInputType.emailAddress,
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter email",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.email,
@@ -64,20 +76,31 @@ class _RegisterState extends State<Register> {
                     height: 25,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
+                      style: TextStyle(color: Colors.teal),
+                      cursorColor: Colors.teal,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: eye,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal)),
                         labelText: "Enter password",
+                        labelStyle: TextStyle(color: Colors.teal),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(
                           Icons.lock,
                           color: Colors.teal,
                         ),
-                        suffixIcon: Icon(
-                          Icons.remove_red_eye,
-                          color: Colors.teal,
-                        )),
-                  ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              eye = !eye;
+                            });
+                          },
+                          icon: Icon(
+                              eye ? Icons.visibility_off : Icons.visibility,
+                              color: Colors.teal),
+                        ),
+                      )),
                   SizedBox(
                     height: 25,
                   ),
@@ -124,7 +147,7 @@ class _RegisterState extends State<Register> {
                       Text(
                         "Have an account?",
                         style: TextStyle(
-                          color: Colors.black.withOpacity(0.7),
+                          color: Colors.teal,
                         ),
                       ),
                       TextButton(
